@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: black;
+          color: white;
+          text-align: center;
+        }
+        </style>
+        
+    <title>My word lists</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Words in Url</h2>          
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Word </th>
+              <th>Count</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+        {% if list.items() %}
+         {% for k, v in list.items() %}
+            <tr>
+              <td>{{ k }}</td>
+              <td>{{ v }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+          </tbody>
+        </table>
+    
+      </div>
+    <!-- contents of footer navigation bar -->
+    <div class="footer">
+    <footer class="navbar fixed-bottom navbar-inverse navbar-toggleable-sm " >
+        <div class="container">
+            <span class="navbar-text ml-auto">&copy; List Inc All rights reserved</span>
+        </div>
+
+    </footer>
+    </div>
+
+<script src="../static/js/jquery.slim.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/scripts.js"></script>
+</body>
+</html>
+
+{% endblock %}
